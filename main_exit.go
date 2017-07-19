@@ -52,12 +52,12 @@ func main() {
 			//wg.Wait()
 			exitCode = 1
 			break
-		// case <-done:
-		// 	fmt.Println("All done!")
-		// 	//ticker.Stop()
-		// 	//wg.Wait()
-		// 	exitCode = 0
-		// 	break
+			// case <-done:
+			// 	fmt.Println("All done!")
+			// 	//ticker.Stop()
+			// 	//wg.Wait()
+			// 	exitCode = 0
+			// 	break
 		}
 	}
 	fmt.Println("All done!")
