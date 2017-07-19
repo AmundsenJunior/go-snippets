@@ -1,16 +1,22 @@
-// copied from ispycode.com/GO/Network/Get-ipaddress-from-hostname
 package main
 
 import (
 	"fmt"
+	"log"
 	"net"
+	"os"
 )
 
 func main() {
-	addr, err := net.LookupIP("jenkins.coredev.cloud")
+	hostname := os.Args[1]
+
+	address, err := net.LookupIP(hostname)
 	if err != nil {
-		fmt.Println("Unknown host")
+		log.Fatal(err)
 	} else {
-		fmt.Println("IP address: ", addr)
+		fmt.Println("IP address: ", address)
 	}
 }
+
+// References:
+// http://ispycode.com/GO/Network/Get-ipaddress-from-hostname
