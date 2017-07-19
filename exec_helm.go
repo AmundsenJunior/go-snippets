@@ -1,3 +1,4 @@
+// $ go run exec_helm.go --help
 package main
 
 import (

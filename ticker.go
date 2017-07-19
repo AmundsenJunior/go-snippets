@@ -1,3 +1,4 @@
+// $ go run ticker.go
 package main
 
 import (

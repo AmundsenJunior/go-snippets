@@ -1,3 +1,4 @@
+// $ go run main_exit.go
 package main
 
 import (

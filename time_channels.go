@@ -1,3 +1,4 @@
+// $ go run time_channels.go
 package main
 
 import (

@@ -1,8 +1,8 @@
+// $ go run get_ip.go jenkins.coredev.cloud
 package main
 
 import (
 	"fmt"
-	"log"
 	"net"
 	"os"
 )
@@ -12,7 +12,7 @@ func main() {
 
 	address, err := net.LookupIP(hostname)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	} else {
 		fmt.Println("IP address: ", address)
 	}
