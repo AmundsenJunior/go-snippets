@@ -1,5 +1,6 @@
+// Get pods of namespace on cluster, using k8s config file
 // $ go get k8s.io/client-go/...
-// $ go run exec_k8s_client.go -k '/home/USERNAME/.kube/confg' -n 'kube-system'
+// $ go run get_pods.go -k '/home/USERNAME/.kube/confg' -n 'kube-system'
 
 package main
 
