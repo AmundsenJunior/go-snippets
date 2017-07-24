@@ -1,4 +1,4 @@
-// $ go run exec_helm.go --help
+// $ go run exec_helm.go init --help
 package main
 
 import (
@@ -8,16 +8,21 @@ import (
 )
 
 func main() {
-	binary, lookErr := exec.LookPath("helm")
+	args := os.Args
+	args[0] = "helm"
+
+	env := os.Environ()
+
+	execHelm(args, env)
+}
+
+func execHelm(args []string, env []string) {
+	helm, lookErr := exec.LookPath("helm")
 	if lookErr != nil {
 		panic(lookErr)
 	}
 
-	args := os.Args[1:]
-
-	env := os.Environ()
-
-	execErr := syscall.Exec(binary, args, env)
+	execErr := syscall.Exec(helm, args, env)
 	if execErr != nil {
 		panic(execErr)
 	}
