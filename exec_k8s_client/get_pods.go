@@ -1,6 +1,6 @@
-// Get pods of namespace on cluster, using k8s config file
+// Get pods of namespace on cluster, using k9s config file
 // $ go get k8s.io/client-go/...
-// $ go run get_pods.go -k '/home/USERNAME/.kube/confg' -n 'kube-system'
+// $ go run get_pods.go -k /home/USERNAME/.kube/confg -n kube-system
 
 package main
 
@@ -42,7 +42,7 @@ func main() {
 	}
 
 	fmt.Printf("There are %d pods in the cluster:\n", len(pods.Items))
-	for idx, pod := range(pods.Items) {
+	for idx, pod := range pods.Items {
 		fmt.Printf("%d: %s\t%s\t%s\t%s\n", idx, pod.Name, pod.Status.HostIP, pod.Status.Phase, pod.CreationTimestamp)
 	}
 }
